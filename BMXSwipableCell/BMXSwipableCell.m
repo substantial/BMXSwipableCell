@@ -38,6 +38,7 @@ NSString *const BMXSwipableCellScrollViewKey = @"BMXSwipableCellScrollViewKey";
 // private constants
 static const CGFloat kDefaultBasementVisibleWidth = 120;
 static const CGFloat kDefaultUITableViewDeleteControlWidth = 47;
+static const CGFloat kDefaulButtonCountForScrollingThreshold = 2.0f;
 
 //
 //
@@ -220,6 +221,7 @@ static const CGFloat kDefaultUITableViewDeleteControlWidth = 47;
     // default values
     //
     self.basementVisibleWidth = kDefaultBasementVisibleWidth;
+    self.basementButtonCount = kDefaultBasementVisibleWidth;
     self.swipeEnabled = YES;
     self.hideAccessoryViewWhenBasementOpened = YES;
     
@@ -576,7 +578,7 @@ static const CGFloat kDefaultUITableViewDeleteControlWidth = 47;
         } break;
             
         case UIGestureRecognizerStateEnded: {
-            if ( _scrollView.contentOffset.x >= ceilf(_basementVisibleWidth / 2.0f) ) {
+            if ( _scrollView.contentOffset.x >= ceilf(_basementVisibleWidth / _basementButtonCount) ) {
                 [_scrollView setContentOffset: CGPointMake(_basementVisibleWidth, 0.0f)
                                      animated: YES];
                 

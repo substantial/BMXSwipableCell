@@ -62,6 +62,11 @@
  */
 @property (nonatomic, assign) BOOL basementConfigured;
 
+/**
+ When swiping the basement open, once the swipe has passed a threshold it will open automatically. This threshold is calculated (_basementVisibleWidth / _basementButtonCount). It defaults to 2.0f
+ */
+@property (nonatomic, assign) CGFloat basementButtonCount;
+
 
 ///------------------------------------------------
 /// @name State inquiry and delegate support
