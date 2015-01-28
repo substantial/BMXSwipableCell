@@ -221,7 +221,7 @@ static const CGFloat kDefaulButtonCountForScrollingThreshold = 2.0f;
     // default values
     //
     self.basementVisibleWidth = kDefaultBasementVisibleWidth;
-    self.basementButtonCount = kDefaultBasementVisibleWidth;
+    self.basementButtonCount = kDefaulButtonCountForScrollingThreshold;
     self.swipeEnabled = YES;
     self.hideAccessoryViewWhenBasementOpened = YES;
     
